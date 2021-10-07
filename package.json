@@ -1,0 +1,23 @@
+{
+  "name": "talon",
+  "version": "1.0.0",
+  "description": "Software payload for the \"Talon\" project, designed to send Twilio developers' code to space!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate_data": "node scripts/generate_data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwilioQuest/talon.git"
+  },
+  "author": "Team TwilioQuest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TwilioQuest/talon/issues"
+  },
+  "homepage": "https://github.com/TwilioQuest/talon#readme",
+  "dependencies": {
+    "fs-jetpack": "^4.2.0"
+  }
+}
