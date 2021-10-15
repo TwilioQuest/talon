@@ -12,8 +12,25 @@ Greetings Operator, and thank you for your participation in the Talon program. Y
 
 Begin by [forking this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo), and [cloning it to your computer](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository). Create a new HTML file (ideally with a unique/descriptive name) in the `apps` folder in your version of the repository. This HTML file must contain ALL of the code, styles, and markup that will comprise your application. That means you'll have to use `<script>` tags to run JavaScript code, embed CSS within `<style>` tags, include images by using [Data URIs](https://css-tricks.com/data-uris/), and so on - **everything needs to be in one HTML file**.
 
-On the spacecraft, your HTML will be displayed in a sandboxed iframe, loaded directly from the filesystem (the spacecraft will not run a local HTTP server). To test how your page will work, you can use the included test harness in this repository. In a Chrome browser (our spacecraft will use a Chromium browser on a Raspberry Pi 4), use `File > Open` to open `harness/index.html?loadFile=yourHTMLfilename.html`. This will open the test harness with an iframe pre-set to show your HTML file.
+On the spacecraft, your HTML will be displayed in a sandboxed iframe, loaded directly from the filesystem (the spacecraft will not run a local HTTP server). To test how your page will work, you can use the included test harness in this repository. There are two ways to test that your file works:
 
+### Easy way, does not require Node.js
+In a Chrome browser (our spacecraft will use a Chromium browser on a Raspberry Pi 4), use `File > Open` to open `harness/index.html?loadFile=yourHTMLfilename.html`.
+
+**NOTE THE URL PARAMETER in the path above!** This will cause the test harness to open your file, and only your file! Otherwise, using the option below, all the code files will display on a loop.
+
+### Slightly harder way, requires Node.js
+To see how your file will look when it loops through with all the other files, you need to take a few more steps. You will need to have [Node.js installed](https://nodejs.org/en/). In the top level folder of the project, run:
+
+`npm run generate_data`
+
+This will generate a data file that the test harness needs to run through all the code files.
+
+Next, in a Chrome browser (our spacecraft will use a Chromium browser on a Raspberry Pi 4), use `File > Open` to open `harness/index.html`. This will loop through all the code files, displaying yours (and all the rest) for 10 seconds each.
+
+If you do this, make sure to delete your changes to the generated data file, and don't include them in your pull request.
+
+### Creating your content
 Edit your HTML file to contain whatever you want! All the HTML files included in the mission will be displayed for **ten seconds** on a tight loop. You should also note that the spacecraft will have no network connectivity, so all your code and content has to be in the one HTML file.
 
 Once you have completed your work, [Submit a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) back to the [TwilioQuest/talon](https://github.com/TwilioQuest/talon) repository. Your pull request should contain only your new HTML file.
