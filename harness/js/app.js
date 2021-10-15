@@ -3,17 +3,18 @@
   const urlParams = new URLSearchParams(window.location.search);
   const loadFile = urlParams.get('loadFile');
 
+  const currentSpan = document.getElementById('filename');
+  const mainframe = document.getElementById('mainframe');
+
   function showSample(index) {
     const sample = TALON_APPS[index];
-    const currentSpan = document.getElementById('filename');
-    const mainframe = document.getElementById('mainframe');
-
     currentSpan.innerHTML = sample;
     mainframe.src = '../apps/' + sample;
   }
 
   if (loadFile && TALON_APPS.indexOf(loadFile) > -1) {
-    showSample(TALON_APPS.indexOf(loadFile));
+    currentSpan.innerHTML = loadFile;
+    mainframe.src = '../apps/' + loadFile;
   } else {
     showSample(currentIndex);
 
