@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geometric</title>
+	<style type="text/css">
+	html,body {
+		margin:0;
+		padding:0;
+		height: 100%;
+		color: #fff;
+		font-family: Monospace;
+		text-align: center;
+		font-size: 33px;
+		overflow: hidden;
+	}
+	#mainframe {
+		display: table;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(#000000, #d800ff);
+		overflow: hidden;
+		transition: all 1s linear;
+	}
+	#msg,#star{
+		display: table-cell;
+    	vertical-align: middle;
+    	transition:all 1s ease-out;
+    	overflow: hidden;
+	}
+	svg {
+		height: 150px;
+		transition: all 1s ease-in;
+	}
+	#cls-1,#cls-2{
+		fill:#000;
+		opacity:0;
+		transition: all 1s ease-out;
+	}
+	</style>
+	<script type="text/javascript">
+
+
+function attendre(m) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, m);
+  });
+}
+
+async function montage() {
+	await attendre(100);
+	mainframe = document.getElementById("mainframe");
+	msg = document.getElementById("msg");
+	msg.innerHTML += ".";
+	await attendre(500);
+	msg.innerHTML += ".";
+	await attendre(500);
+	msg.innerHTML += ".";
+	await attendre(500);
+	msg.innerHTML = "";
+	await attendre(100);
+	star.innerHTML = '<svg id="geometric" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 409.66 634.89"><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><polygon id="cls-1" points="100.34 183.09 194.34 0 409.66 394.14 329.16 634.89 100.34 183.09"/><polygon id="cls-2" points="0 377.42 95.34 190.36 190.15 477.91 91.54 634.89 0 377.42"/></g></g></svg>';
+	forme_un = document.getElementById("cls-1");
+	forme_deux = document.getElementById("cls-2");
+	geometric = document.getElementById("geometric");
+	await attendre(1000);
+	forme_un.style.opacity = "1";
+	await attendre(100);
+	forme_deux.style.opacity = "1";
+	await attendre(2000);
+	forme_un.style.fill = "#fff";
+	forme_deux.style.fill = "#fff";
+	geometric.style.height = "300px";
+	await attendre(100);
+}
+
+montage();
+
+	</script>
+</head>
+<body>
+	<div id="mainframe">
+		<div id="msg">
+		</div>
+		<div id="star">
+		</div>
+	</div>
+</body>
+</html>
