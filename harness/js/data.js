@@ -3,6 +3,5 @@ window.TALON_APPS = [
   "brodan.html",
   "doge.html",
   "hello.html",
-  "rickroll.html",
-  "wdaniels-advertisement-in-space.html"
+  "rickroll.html"
 ];
