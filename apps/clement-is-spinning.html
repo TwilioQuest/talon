@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap" rel="stylesheet">
+
+        <style>
+
+            * {
+                background-color: #132c38;
+            }
+
+            h1 {
+                font-family: 'Poppins', sans-serif;
+                color: white
+            }
+            h2 {
+                font-family: 'Poppins', sans-serif;
+                color: white;
+                font-size: 1em;
+                text-align: center;
+            }
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 80vw;
+                height: 100vh;
+                margin-left: 10vw;
+            }
+
+            .spinny {
+                cursor: pointer;
+                position: relative;
+                font-size: 20em;
+                width: 1em;
+                height: 1em;
+                margin: 5vw 0;
+                animation: spin linear 1.8s infinite;
+                overflow: hidden; /* scrollbars appear without this */
+            }
+
+            .spinny__inner {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: url(http://cdn2.clementsauvage.me.cellar-c2.services.clever-cloud.com/clem.png) no-repeat center;
+                background-size: cover;
+                animation: spin linear 0.9s infinite;
+                animation-direction: reverse;
+                animation-play-state: paused;
+            }
+
+            .spinny:hover .spinny__inner {
+                animation-play-state: running;
+            }
+
+            .player {
+                position: absolute;
+                bottom: 0;
+            }
+
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1>Let's send some music 🎶🎵</h1>
+        <div class="spinny">
+            <div class="spinny__inner"></div>
+          </div>
+          <h1>To space 🌙🌍🪐 !</h1>
+          <h2>
+              Music from my great friends Léa Dessandre & Thomas Dunford + Jupiter Ensemble, <br/> 
+              available everywhere (on earth at least)
+            </h2>
+          
+          <iframe class="player" src="https://open.spotify.com/embed/track/5PbaxDE2mE6Lh8uEewKUeT?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay=true; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </body>
+</html>
