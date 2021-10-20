@@ -1,0 +1,236 @@
+<html lang="en">
+  <!--
+        Hey everyone, I rushed to make this, it's not pretty
+        thanks for reading and watching.
+
+        2021. Saint Paul, Minnesota.
+        Ryan Rampersad.
+  -->
+  <head>
+    <title>Ryan Rampersad 🚀</title>
+    <style type="text/css">
+      body {
+        background: #222;
+        font-family: sans-serif;
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .fullScreen {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        position: relative;
+      }
+      .ribbon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fullScreen">
+      <div style="font-size: 2.5rem">
+        <h1 style="text-transform: uppercase; font-weight: bold">
+          Ryan Rampersad
+        </h1>
+        <p>Hey Earth 🌎</p>
+        <p>Join us in our virtuous pursuits 🎋</p>
+        <p
+          style="
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADz0lEQVRoge2XTWgdVRiGn+/MpGnv3LRoqC4UhCz8I8RFRClSXdgqWkuV4CRpi1gqglZTuhFXkiDdCVIKBfEHo1Bzr0JRtGAqWhTBQhsaFX9ADbZisbXaJnPb5t6Z+VyotU0yc89MYlGYZzcz73fO+84ZzjcHCgoKCgoK/sfIJZ2tOnmdq+ZxYLXCNUCowvdG9b3QNbvo8Y7NLFm0O+iqry9/njRk0wDOSO2e6JvS+wxKnNv4oBr3hmBIkacBN8FKgLIt6vNe4u0Tbc65xXch8gSxfBn1eU/mC1A9Xna09JPAcNhb3prXvzMy9QIij1rKDwFdQAtwLJKoE3/Zb0likzqxercDyxQGnJHaLqrqWLv+e4xqsD6DeYBu/jR/0gj30lB13wjuTBKnBlCJO85fiD7maG0P1dOXW1tRFWJ91lr/DyHI/ljZ4bjud8bheJIwNQA66/laR51xtxqstnHRUjlzMyIdzZWzcEF7gFsQ2VT3y18kCVMDCGZijttXqzLqVKb28Nbk9Wn1Mdpp53dOfhXiVZHvvZMmSg0QLT6zHySY+6nc70TmK6cSvOtUamvZq60zFSralsXxDAbC3qWfNhMlbGl/sW75lFSCVxQGEhQCrAFd40zVJqnU9in6mREdC018VCJJ3D2aojptI2veyF5Tz22tjSlcm9tMDkS5O+wrjzbTpW+jI8EGZ1GtR2LpUxhfOHvNMYZZXXkuUj8hFW0XZEcsisDZhbFmhdbPeT/YCNNXQOTjCy6XzMtSBgS+5iGp2WhTAzT88mGEAwtjyx5FP7HVpjcywCBbgMa8HGXGpO79FymbCRq+dwjVDVy6ECcjKX1gK24aACDqa3vTqNyGcDC/LztEeRFf6rZ6qwAAsXAVyCDKq4BVk8nB2VBlZ5aC9E58MatQ3fJvnuEEdtLv/ZylxnoFIomHgF8yu7LnSNiY3p61yDoAftsJE5t1wO9ZJ7EgFuERNrZPZi20DwA0+ksHIie6Ffgw60RpqMhQ6Jf35anN/UW3VGvdkXKfiK5ESTzyWTAc+d4mRDRPcaYVuJDGg6UxgaMo3XnHAIYj8TbnNQ95VmCvtjpBrV9hmyhdOedVRZ6J/dL2+ZiHlAAtI8FNGHFVY0+FK1SlQ+AOYCUwn5PWhKCbw962j+YxxnkS+0CjtfGjW295SpGtKKUF2P5PK/JcPF163vZP04bmvnYHVxqHjcDDApkP6QrjqL4ct4av88Blp/KYTCPbi61O3ehgVhDrCgydxLockXZgKXAKZRLDBKrfouZgZMwo/pIjC226oKCgoKCg4L/CH/2pQ2x506tNAAAAAElFTkSuQmCC"
+          />
+          @ryanmr
+        </p>
+        <div
+          id="rockets"
+          style="font-size: 1.5rem; width: 400px; margin: 0 auto"
+        ></div>
+      </div>
+    </div>
+    <canvas id="ribbon" class="ribbon"></canvas>
+  </body>
+
+  <script>
+    class RibbonGenerator {
+      constructor(element, options = {}) {
+        this.options = {
+          factor: 120,
+          alpha: 0.5,
+          initialOffset: 0.7,
+        };
+        this.canvas = element;
+        this.context = element.getContext("2d");
+        this.pixelRatio = window.devicePixelRatio || 1;
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.canvas.width = this.width * this.pixelRatio;
+        this.canvas.height = this.height * this.pixelRatio;
+        this.context.scale(this.pixelRatio, this.pixelRatio);
+        this.options = Object.assign(Object.assign({}, this.options), options);
+        this.context.globalAlpha = this.options.alpha;
+      }
+      _calculateY(y) {
+        var t = y + (Math.random() * 2 - 1.2) * this.options.factor;
+        return t < this.options.factor ? this._calculateY(y) : t;
+      }
+      _calculateX(x) {
+        return x + Math.random() * 2 * this.options.factor;
+      }
+      getSegments() {
+        var segments = [];
+        var initial = {
+          top: {
+            x: 0,
+            y: this.height * this.options.initialOffset + this.options.factor,
+          },
+          bottom: {
+            x: 0,
+            y: this.height * this.options.initialOffset - this.options.factor,
+          },
+        };
+        segments.push(initial);
+        var threshold = this.width + this.options.factor;
+        while (segments[segments.length - 1].bottom.x < threshold) {
+          var bottomPoint = segments[segments.length - 1].bottom;
+          var x = this._calculateX(bottomPoint.x);
+          var y = this._calculateY(bottomPoint.y);
+          segments.push({
+            top: segments[segments.length - 1].bottom,
+            bottom: { x: x, y: y },
+          });
+        }
+        return segments;
+      }
+      getColors(number) {
+        var theta = 0;
+        var tau = 2 * Math.PI;
+        var colors = [];
+        for (var k = 0; k < number; k++) {
+          theta += tau / 20;
+          var red = Math.round(35 * Math.sin(theta) + 200);
+          red += Math.floor(Math.random() * 30) - 15;
+          var color = "rgb(" + red + ",0,0)";
+          colors.push(color);
+        }
+        return colors;
+      }
+      generate() {
+        const segments = this.getSegments();
+        const colors = this.getColors(segments.length);
+        var counter = 0;
+        var draw = () => {
+          counter += 3;
+          var diff = [];
+          for (var k = 0; k < segments.length; k++) {
+            var offset = k + counter / 100;
+            var next_x = (1 / 10) * Math.cos(offset);
+            var next_y = (1 / 4) * Math.sin(offset);
+            var segment = segments[k];
+            if (k !== 0 && k !== segments.length - 1) {
+              segment.bottom.x += next_x;
+            }
+            segment.bottom.y += next_y;
+            diff.push(segment);
+          }
+          this._draw(diff, colors);
+        };
+        var redraw = () => {
+          draw();
+          this._animator = requestAnimationFrame(redraw);
+        };
+        this._animator = requestAnimationFrame(redraw);
+      }
+      _draw(segments, colors) {
+        this.context.clearRect(0, 0, this.width, this.height);
+        for (var i = 1; i < segments.length; i++) {
+          var previous = segments[i - 1];
+          var top = previous.top;
+          var bottom = previous.bottom;
+          var next = segments[i].bottom;
+          var color = colors[i - 1];
+          var gradient = this.context.createLinearGradient(
+            top.x,
+            top.y,
+            next.x,
+            next.y
+          );
+          gradient.addColorStop(0, color);
+          gradient.addColorStop(0.5, "rgba(255, 0, 0, .75)");
+          gradient.addColorStop(1, color);
+          this.context.beginPath();
+          this.context.moveTo(top.x, top.y);
+          this.context.lineTo(bottom.x, bottom.y);
+          this.context.lineTo(next.x, next.y);
+          this.context.closePath();
+          this.context.fillStyle = gradient;
+          this.context.strokeStyle = "rgba(0, 0, 0, .3)";
+          this.context.stroke();
+          this.context.fill();
+        }
+      }
+      terminate() {
+        this._animator && cancelAnimationFrame(this._animator);
+      }
+    }
+
+    window.onload = function () {
+      var el = document.getElementById("ribbon");
+
+      var gen = new RibbonGenerator(el);
+
+      var timeoutDelay = 2500;
+      var counter = 0;
+      var handler = null;
+      function nextTick() {
+        counter++;
+        console.log("next tick in", timeoutDelay);
+        if (counter > 0) {
+          document.getElementById("rockets").innerHTML =
+            document.getElementById("rockets").innerHTML + "🚀";
+        }
+        gen.generate();
+        timeoutDelay = timeoutDelay * 0.7;
+        handler = setTimeout(nextTick, timeoutDelay);
+        if (timeoutDelay < 100) {
+          timeoutDelay = 100;
+          
+        }
+      }
+
+      nextTick();
+
+      console.log('🎊 if you see this, you are awesome');
+    };
+  </script>
+</html>
