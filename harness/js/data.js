@@ -1,4 +1,7 @@
 // DO NOT EDIT THIS GENERATED FILE
 window.TALON_APPS = [
-  "aking.html"
+  "brodan.html",
+  "doge.html",
+  "hello.html",
+  "rickroll.html"
 ];
