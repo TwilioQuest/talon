@@ -12,7 +12,7 @@
     mainframe.src = '../apps/' + sample;
   }
 
-  if (loadFile && TALON_APPS.indexOf(loadFile) > -1) {
+  if (loadFile) {
     currentSpan.innerHTML = loadFile;
     mainframe.src = '../apps/' + loadFile;
   } else {
