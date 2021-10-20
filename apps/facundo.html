@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Random stuff from Facundo</title>
+	<script>randomNumber = Math.floor(Math.random()*4+1);
+
+window.onload = function() {
+	if (randomNumber == 1) {
+		document.getElementById("s1").style.display = "inline";
+		document.getElementById("s2").style.display = "none";
+		document.getElementById("s3").style.display = "none";
+		document.getElementById("s4").style.display = "none";
+	}
+	if (randomNumber == 2) {
+		document.getElementById("s1").style.display = "none";
+		document.getElementById("s2").style.display = "inline";
+		document.getElementById("s3").style.display = "none";
+		document.getElementById("s4").style.display = "none";
+	}
+	if (randomNumber == 3) {
+		document.getElementById("s1").style.display = "none";
+		document.getElementById("s2").style.display = "none";
+		document.getElementById("s3").style.display = "inline";
+		document.getElementById("s4").style.display = "none";
+	}
+	if (randomNumber == 4) {
+		document.getElementById("s1").style.display = "none";
+		document.getElementById("s2").style.display = "none";
+		document.getElementById("s3").style.display = "none";
+		document.getElementById("s4").style.display = "inline";
+	}
+}</script>
+<style>
+#s1 {
+  animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  50% {font-size: 10rem;}
+}
+</style>
+</head>
+
+<body>
+
+	<div id="s1" style="height: 100%;width: 100%;background-color: #8bc34a;">
+    <h1 style="//font-size: 1rem;
+              text-align: center;
+              height:100%;
+              line-height: 30vh;
+              background-color: inherit;
+              //display: block;
+              display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+              color: #fcedd8;
+              font-family: 'Arial Black';
+              font-weight: 700;
+              text-shadow: 5px 5px 0px #eb452b,
+                          10px 10px 0px #efa032,
+                          15px 15px 0px #46b59b,
+                          20px 20px 0px #017e7f,
+                          25px 25px 0px #052939,
+                          30px 30px 0px #c11a2b;">GO VEGAN</h1>
+	</div>
+	<div id="s2">
+		<p style="font-size: 8vw; font-family: 'courier'; font-weight: 900;">
+      IOWA DOSEN'T SUCK <br>
+      I LOVE YOU, AUDREY.
+    </p>
+	</div>
+
+	<div id="s3">
+    <p style="height:100%; font-size: 9vw; font-family: 'helvetica'; font-weight: 900; display: flex;
+justify-content: center;
+align-content: center;
+flex-direction: column;
+background-color: #ffe100;">
+      (319) 552-6617 <br>
+    </p>
+	</div>
+
+	<div id="s4">
+		<p style="font-size: 8vw; font-family: 'courier'; font-weight: 900;">
+      IOWA DOSEN'T SUCK <br>
+      I LOVE YOU, AUDREY.
+    </p>
+	</div>
+
+</body>
+</html>
