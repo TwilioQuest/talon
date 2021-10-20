@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Bostock">
+    <meta name="description" content="Sam Bostock">
+    <meta property="og:description" content="Sam Bostock">
+    <meta property="og:title" content="Sam Bostock">
+    <meta name="twitter:title" content="Sam Bostock">
+    <title>
+      Sam Bostock
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <style type="text/css">
+      .animated {
+        animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        animation-fill-mode: none;
+        -webkit-animation-fill-mode: none;
+        animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform-origin: center center;
+          transform: rotate(0) scale(1);
+        }
+        25% {
+          transform-origin: center center;
+          transform: rotate(180deg) scale(0.5);
+        }
+        50% {
+          transform-origin: center center;
+          transform: rotate(360deg) scale(0.1);
+        }
+        75% {
+          transform-origin: center center;
+          transform: rotate(540deg) scale(0.5);
+        }
+        100% {
+          transform-origin: center center;
+          transform: rotate(720deg) scale(1);
+        }
+      }
+
+      @-webkit-keyframes rotate {
+        0% {
+          webkit-transform-origin: center center;
+          webkit-transform: rotate(0) scale(1);
+        }
+        25% {
+          webkit-transform-origin: center center;
+          webkit-transform: rotate(180deg) scale(0.5);
+        }
+        50% {
+          webkit-transform-origin: center center;
+          webkit-transform: rotate(360deg) scale(0.1);
+        }
+        75% {
+          webkit-transform-origin: center center;
+          webkit-transform: rotate(540deg) scale(0.5);
+        }
+        100% {
+          webkit-transform-origin: center center;
+          webkit-transform: rotate(720deg) scale(1);
+        }
+      }
+
+      .rotate {
+        animation-name: rotate;
+        -webkit-animation-name: rotate;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        height: 100%;
+        font-family: 'Inconsolata', monospace;
+        color: #fff200;
+        background-color: #303030;
+      }
+
+      .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container h1 {
+        /* height: 100%; */
+        text-align: center;
+        font-size: 10em;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="animated rotate">Sam Bostock</h1>
+    </div>
+  </body>
+</html>
