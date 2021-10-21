@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab vs. Space</title>
+    <style>
+      body {
+        background-color: #FFA0A0;
+        font-family: monospace;
+      }
+      #container {
+        text-align: center;
+        font-size: 1000%;
+        margin-top: 25%;
+      }
+      p {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Design by Hats, #dadjoke by dad</p>
+    <div id="container">Tab ➡️ vs. <span id="emoji">Space</span></div>
+    <script>
+      const el = document.getElementById("emoji");
+      ["👆", "👉", "👇", "👈", "🤷‍♀️"].forEach((emoji, index) => {
+        setTimeout(() => {
+          console.log("changing to", emoji);
+          el.innerText = emoji;
+        }, 1000 * index);
+      });
+    
+    </script>
+  </body>
+</html>
