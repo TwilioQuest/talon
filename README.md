@@ -2,7 +2,7 @@
 
 Greetings Operator, and thank you for your participation in the Talon program. Your mission, should you choose to accept it, is to **submit a small HTML (with embedded CSS and JavaScript) page that will run in space**. In partnership with our friends at [Night Crew Labs](https://www.nightcrewlabs.com/), we will send a balloon into near Earth orbit, with your code on board. We will capture video of your code executing in space, and send that video to you afterward. Sweet, right? Read on to learn how to get involved!
 
-## tl;dr
+## TL;DR
 * Create an HTML file and put it in the `apps` directory of this repository.
 * Test that your file works using the test harness (see instructions below).
 * [Submit a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to this repository containing your new file. **Your pull request must be in by 4pm Pacific time on October 20th, 2021**. Also note that we can only accommodate 180 HTML files, so PRs will be processed on a first come, first merge basis.
