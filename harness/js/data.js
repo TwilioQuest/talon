@@ -4,5 +4,6 @@ window.TALON_APPS = [
   "doge.html",
   "griz.html",
   "hello.html",
+  "phkitty.html",
   "rickroll.html"
 ];
