@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        background-color: #7556ea;
+      }
+
+      .main-content {
+        width: 80vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .paragraph {
+        font-weight: 700;
+        display: inline-block;
+        animation: custom-pulse 3s infinite;
+        font-size: 50px;
+      }
+
+      .footer-paragraph {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .earth-icon {
+        animation: rotate 10s infinite;
+        font-size: 80px;
+      }
+
+      @keyframes custom-pulse {
+        0%,
+        100% {
+          color: #fff;
+        }
+
+        50% {
+          color: #3a2391;
+        }
+      }
+
+      @keyframes rotate {
+        0%,
+        100% {
+          transform: rotate(365deg);
+        }
+
+        50% {
+          transform: rotate(-365deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <p class="earth-icon">🌍</p>
+      <p class="paragraph">
+        Severo's on Orbit!
+        <br />
+        <br />
+      </p>
+      <p class="footer-paragraph">Made with 🖤 by Kissinger156</p>
+    </div>
+  </body>
+</html>
