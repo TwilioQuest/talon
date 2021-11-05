@@ -1,4 +1,14 @@
-# Welcome to the Talon Program!
+# Congratulations on launching Talon 1!
+
+On October 21st, 2021, Twilio developers at the [SIGNAL Conference](https://signal.twilio.com), with the assistance of our stalwart allies at [Night Crew Labs](https://www.nightcrewlabs.com/), successfully launched the Talon 1 space craft into near Earth orbit! Participants who filled out the Google form (linked below, but no longer monitored or available) received a link to video footage of their code running in space.
+
+For further inquiries about the Talon 1 mission, please reach out to [twilio_space@twilio.com](mailto:twilio_space@twilio.com).
+
+The previous README for the Talon flight is included below for historical preservation!
+
+------
+
+# ARCHIVE: Welcome to the Talon Program!
 
 Greetings Operator, and thank you for your participation in the Talon program. Your mission, should you choose to accept it, is to **submit a small HTML (with embedded CSS and JavaScript) page that will run in space**. In partnership with our friends at [Night Crew Labs](https://www.nightcrewlabs.com/), we will send a balloon into near Earth orbit, with your code on board. We will capture video of your code executing in space, and send that video to you afterward. Sweet, right? Read on to learn how to get involved!
 
